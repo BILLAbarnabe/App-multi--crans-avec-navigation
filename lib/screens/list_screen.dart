@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../data/destination_data.dart';
 import '../widgets/destination_card.dart';
-import '../widgets/search_bar_widget.dart';
+import '../widgets/custom_input.dart';
 
 class ListScreen extends StatefulWidget {
   const ListScreen({super.key});
@@ -45,7 +45,7 @@ class _ListScreenState extends State<ListScreen> {
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
-              SearchBarWidget(
+              CustomInput(
                 controller: _searchController,
                 onChanged: (value) {
                   setState(() {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../data/destination_data.dart';
-import '../theme/app_theme.dart';
+import '../main.dart';
 import '../widgets/destination_card.dart';
 import '../widgets/section_title.dart';
 

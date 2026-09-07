@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-# App-multi--crans-avec-navigation
-=======
-# Explore Voyage
+# Projet Flutter — App multi-écrans avec navigation
 
 Application Flutter multi-écrans dédiée aux voyages, avec navigation, recherche, détails et réservation.
 
@@ -43,5 +40,4 @@ Application Flutter multi-écrans dédiée aux voyages, avec navigation, recherc
 
 ## Captures d’écran
 
-Ajoutez vos captures dans le dossier screenshots/ avant la publication du dépôt GitHub.
->>>>>>> 0c50999 (Initial commit)
+Ajoutez vos captures dans le dossier `screenshots/` avant la publication du dépôt GitHub.

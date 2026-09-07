@@ -31,6 +31,14 @@ class DestinationCard extends StatelessWidget {
                   if (loadingProgress == null) return child;
                   return const Center(child: CircularProgressIndicator());
                 },
+                errorBuilder: (context, error, stackTrace) {
+                  return const ColoredBox(
+                    color: Color(0xFFE2E8F0),
+                    child: Center(
+                      child: Icon(Icons.image_not_supported_outlined),
+                    ),
+                  );
+                },
               ),
             ),
             Padding(
