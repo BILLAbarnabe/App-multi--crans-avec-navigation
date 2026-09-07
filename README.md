@@ -1,11 +1,11 @@
 # Projet Flutter — App multi-écrans avec navigation
 
-Application Flutter multi-écrans dédiée aux voyages, avec navigation, recherche, détails et réservation.
+Application Flutter multi-écrans dédiée aux voyages, avec navigation nommée, recherche, détails et réservation.
 
 ## Fonctionnalités
 
 - 4 écrans distincts : accueil, liste, détail, réservation
-- Navigation avec GoRouter
+- Navigation avec GoRouter et routes nommées
 - Recherche et filtrage de destinations
 - Écran de détail avec paramètres
 - Formulaire de réservation validé
@@ -29,15 +29,33 @@ Application Flutter multi-écrans dédiée aux voyages, avec navigation, recherc
 4. Pour exécuter les tests :
    flutter test
 
-## Structure du projet
+## Architecture
 
-- lib/models : modèles métiers
-- lib/data : données de démonstration
-- lib/screens : écrans de l’application
-- lib/widgets : widgets réutilisables
-- lib/routes : configuration de navigation
-- lib/theme : thèmes clair/sombre
+```text
+lib/
+├── data/
+│   └── destination_data.dart
+├── models/
+│   └── destination.dart
+├── screens/
+│   ├── home_screen.dart
+│   ├── list_screen.dart
+│   ├── detail_screen.dart
+│   └── booking_screen.dart
+├── widgets/
+│   ├── destination_card.dart
+│   ├── custom_input.dart
+│   └── section_title.dart
+└── main.dart
+```
+
+Les données de démonstration sont dans `lib/data/` et le modèle dans `lib/models/`. Les écrans ne contiennent pas de données de destinations en dur.
 
 ## Captures d’écran
 
-Ajoutez vos captures dans le dossier `screenshots/` avant la publication du dépôt GitHub.
+Les captures des écrans accueil, liste, détail et réservation sont conservées dans `screenshots/`.
+
+![Accueil](screenshots/accueil.png)
+![Liste et recherche](screenshots/liste-recherche.png)
+![Détail d'une destination](screenshots/detail-destination.png)
+![Formulaire de réservation](screenshots/reservation.png)

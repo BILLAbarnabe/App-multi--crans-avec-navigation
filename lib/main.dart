@@ -41,20 +41,24 @@ class AppTheme {
 final appRouter = GoRouter(
   routes: [
     GoRoute(
+      name: 'home',
       path: '/',
       builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
+      name: 'destinations',
       path: '/destinations',
       builder: (context, state) => const ListScreen(),
     ),
     GoRoute(
+      name: 'destination-detail',
       path: '/destination/:id',
       builder: (context, state) => DetailScreen(
         id: state.pathParameters['id'] ?? '',
       ),
     ),
     GoRoute(
+      name: 'booking',
       path: '/booking/:id',
       builder: (context, state) => BookingScreen(
         destinationId: state.pathParameters['id'] ?? '',
