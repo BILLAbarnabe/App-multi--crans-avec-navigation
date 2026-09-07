@@ -49,13 +49,17 @@ class DetailScreen extends StatelessWidget {
                       Expanded(
                         child: Text(
                           destination.title,
-                          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall
+                              ?.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),
                         ),
                       ),
                       Chip(
-                        label: Text('${destination.rating.toStringAsFixed(1)} ★'),
+                        label:
+                            Text('${destination.rating.toStringAsFixed(1)} ★'),
                       ),
                     ],
                   ),
@@ -67,12 +71,17 @@ class DetailScreen extends StatelessWidget {
                   const SizedBox(height: 16),
                   Text(destination.description),
                   const SizedBox(height: 18),
-                  Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
-                    children: destination.highlights
-                        .map((item) => Chip(label: Text(item)))
-                        .toList(),
+                  SizedBox(
+                    height: 42,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: destination.highlights.length,
+                      separatorBuilder: (context, index) =>
+                          const SizedBox(width: 8),
+                      itemBuilder: (context, index) => Chip(
+                        label: Text(destination.highlights[index]),
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 22),
                   Container(
@@ -86,9 +95,10 @@ class DetailScreen extends StatelessWidget {
                       children: [
                         Text(
                           '${destination.price} €',
-                          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.titleLarge?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
                         ),
                         Text('${destination.duration} jours'),
                       ],

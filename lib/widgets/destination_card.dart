@@ -23,22 +23,46 @@ class DestinationCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: Image.network(
-                destination.imageUrl,
-                fit: BoxFit.cover,
-                width: double.infinity,
-                loadingBuilder: (context, child, loadingProgress) {
-                  if (loadingProgress == null) return child;
-                  return const Center(child: CircularProgressIndicator());
-                },
-                errorBuilder: (context, error, stackTrace) {
-                  return const ColoredBox(
-                    color: Color(0xFFE2E8F0),
-                    child: Center(
-                      child: Icon(Icons.image_not_supported_outlined),
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Image.network(
+                    destination.imageUrl,
+                    fit: BoxFit.cover,
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) return child;
+                      return const Center(child: CircularProgressIndicator());
+                    },
+                    errorBuilder: (context, error, stackTrace) {
+                      return const ColoredBox(
+                        color: Color(0xFFE2E8F0),
+                        child: Center(
+                          child: Icon(Icons.image_not_supported_outlined),
+                        ),
+                      );
+                    },
+                  ),
+                  Positioned(
+                    top: 12,
+                    right: 12,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.black54,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 6,
+                        ),
+                        child: Text(
+                          '${destination.duration} jours',
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                      ),
                     ),
-                  );
-                },
+                  ),
+                ],
               ),
             ),
             Padding(
@@ -51,9 +75,10 @@ class DestinationCard extends StatelessWidget {
                       Expanded(
                         child: Text(
                           destination.title,
-                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.titleMedium?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
                         ),
                       ),
                       const Icon(Icons.star, color: Colors.amber, size: 18),
